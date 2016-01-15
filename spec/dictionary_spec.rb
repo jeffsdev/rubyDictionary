@@ -44,9 +44,17 @@ describe('Word') do
     it('returns the id of a word') do
       test_word = Word.new({:term => "Ruby"})
       test_word.save
+      expect(test_word.id()).to(eq(1))
+    end
+  end
+
+  describe('.find') do
+    it('finds a word based on its id number') do
+      test_word = Word.new({:term => "Ruby"})
+      test_word.save
       test_word2 = Word.new({:term => "JavaScript"})
       test_word2.save
-      expect(test_word.id()).to(eq(1))
+      expect(Word.find(test_word.id())).to(eq(test_word))
     end
   end
 

@@ -23,5 +23,15 @@ class Word
     @@words = []
   end
 
+  define_singleton_method(:find) do |identification|
+    found_item = nil
+    @@words.each do |item|
+      if item.id == identification
+        found_item = item
+      end
+    end
+    found_item
+  end
+
 
 end
