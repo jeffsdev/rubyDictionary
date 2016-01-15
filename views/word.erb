@@ -4,12 +4,17 @@
 <p><%= @word.term() %></p>
 
 <h2>Definition:</h2>
-<p></p>
+
+<ul>
+  <% @word.definitions().each() do |definition|  %>
+  <li><%= definition.meaning() %></li>
+  <% end %>
+</ul>
 
 <br>
 <br>
 <br>
 
-<a href="#">Add a definition for this word</a>
+<a href="/word/<%= @word.id() %>/add_definition">Add a definition for this word</a>
 <br>
 <a href="/">Return to Home</a>

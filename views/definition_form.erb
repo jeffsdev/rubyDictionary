@@ -1,0 +1,9 @@
+<h1>Add a Definition for this word:</h1>
+
+<form action="/word/<%= @word.id() %>" method="post">
+  <div class="form-group">
+    <label>Add Word:</label>
+    <input type="text" class="form-control" id="meaning" name="meaning" placeholder="Add definition">
+  </div>
+  <button type="submt" class="btn btn-default" name="Submit">Submit</button>
+</form>

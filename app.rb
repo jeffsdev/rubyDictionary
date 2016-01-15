@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/word')
+require('./lib/definition')
 also_reload('./lib/**/*.rb')
 
 # gets root index page
@@ -34,3 +35,36 @@ get('/word/:id') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:word)
 end
+
+# gets add_definition page, that contains a form
+# to add a definition to the chosen word.
+get('/word/:id/add_definition') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:definition_form)
+end
+
+# form on the add_definition page will post to /word/(word id) page
+# upon pressing submit. Then user will be taken to
+# success2 page, with a link back to the word's page,
+# where it will show the word and it's definition.
+post('/word/:id') do
+  @word = Word.find(params.fetch('id').to_i())
+  meaning = params.fetch('meaning')
+  @definitions = Definition.new({:meaning => meaning})
+  @definitions.save()
+  @word.definitions().push(@definitions)
+  @definitions = Definition.all()
+  erb(:success2)
+end
+
+
+
+
+
+
+
+
+
+
+
+#

@@ -5,11 +5,11 @@ class Word
   def initialize(attributes)
     @term = attributes.fetch(:term)
     @id = @@words.length + 1
-    @definition = []
+    @definitions = []
   end
 
-  def definition
-    @definition
+  def definitions
+    @definitions
   end
 
   define_singleton_method(:all) do
