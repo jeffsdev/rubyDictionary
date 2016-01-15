@@ -65,10 +65,36 @@ end
     #
 
 describe('Definition') do
+  before() do
+    Definition.clear()
+  end
+
   describe('#meaning') do
     it('returns the definition for a word') do
       test_meaning = Definition.new({:meaning => "A cool programming language"})
       expect(test_meaning.meaning()).to(eq("A cool programming language"))
+    end
+  end
+
+  describe('#save') do
+    it('saves a definition into an array') do
+      test_definition = Definition.new({:meaning => "A cool programming language"})
+      test_definition.save
+      expect(Definition.all()).to(eq([test_definition]))
+    end
+  end
+
+  describe('.all') do
+    it('returns an empty array') do
+      expect(Definition.all()).to(eq([]))
+    end
+  end
+
+  describe('.clear') do
+    it('Empties the array of definitions') do
+      Definition.new({:meaning => "A cool programming language"})
+      Definition.clear
+      expect(Definition.all()).to(eq([]))
     end
   end
 end

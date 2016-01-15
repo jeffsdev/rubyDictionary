@@ -18,7 +18,4 @@ class Definition
   define_singleton_method(:clear) do
     @@definitions = []
   end
-
-
-
 end
