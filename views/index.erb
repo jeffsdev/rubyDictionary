@@ -4,7 +4,7 @@
 
 <ul>
   <% @words.each() do |word|  %>
-  <li><%= word.term() %></li>
+  <li><a href="/word/<%= word.id() %>"><%= word.term() %></a></li>
   <% end %>
 </ul>
 
