@@ -4,7 +4,7 @@ class Word
 
   def initialize(attributes)
     @term = attributes.fetch(:term)
-    # @id = Word.length + 1
+    @id = @@words.length + 1
   end
 
   define_singleton_method(:all) do
@@ -15,9 +15,13 @@ class Word
     @@words.push(self)
   end
 
-  # define_singleton_method(:id) do
-  #   @id
-  # end
+  def id
+    @id
+  end
+
+  define_singleton_method(:clear) do
+    @@words = []
+  end
 
 
 end
