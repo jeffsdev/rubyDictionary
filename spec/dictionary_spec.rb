@@ -13,6 +13,25 @@ describe('Word') do
       expect(test_word.term()).to(eq("Ruby"))
     end
   end
+
+  describe('.save') do
+    it('saves a word into an array') do
+      test_word = Word.new({:term => "Ruby"})
+      test_word.save
+      expect(Word.all()).to(eq([test_word]))
+    end
+  end
+
+
+
+
+
+  # describe('.id') do
+  #   it('returns the id of a word') do
+  #     expect(Word.id())
+  #   end
+  # end
+
 end
 
     #
