@@ -18,5 +18,4 @@ describe('Word path', {:type => :feature}) do
     click_button('Submit')
     expect(page).to have_content("Dictionary")
   end
-
 end
