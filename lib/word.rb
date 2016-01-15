@@ -5,6 +5,11 @@ class Word
   def initialize(attributes)
     @term = attributes.fetch(:term)
     @id = @@words.length + 1
+    @definition = []
+  end
+
+  def definition
+    @definition
   end
 
   define_singleton_method(:all) do
@@ -32,6 +37,4 @@ class Word
     end
     found_item
   end
-
-
 end
