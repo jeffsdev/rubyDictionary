@@ -1,20 +1,21 @@
-<h1>word and definition</h1>
+<div class="row">
+  <div class="container-fluid">
+    <div class="word-list col-sm-6 col-sm-offset-3">
 
-<h2>Word:</h2>
-<p><%= @word.term() %></p>
+      <h2>Word:</h2>
+      <p><%= @word.term() %></p>
 
-<h2>Definition:</h2>
+      <h2>Definition:</h2>
 
-<ul>
-  <% @word.definitions().each() do |definition|  %>
-  <li><%= definition.meaning() %></li>
-  <% end %>
-</ul>
+      <ul>
+        <% @word.definitions().each() do |definition|  %>
+        <li><%= definition.meaning() %></li>
+        <% end %>
+      </ul>
 
-<br>
-<br>
-<br>
-
-<a href="/word/<%= @word.id() %>/add_definition">Add a definition for this word</a>
-<br>
-<a href="/">Return to Home</a>
+      <a href="/word/<%= @word.id() %>/add_definition">Add a definition for this word</a>
+      <br>
+      <a href="/">Return to Home</a>
+    </div>
+  </div>
+</div>

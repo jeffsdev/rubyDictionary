@@ -1,18 +1,17 @@
-<h1>Dictionary</h1>
-
-<h3>List of Words:</h3>
-
-<ul>
-  <% @words.each() do |word|  %>
-  <li><a href="/word/<%= word.id() %>"><%= word.term() %></a></li>
-  <% end %>
-</ul>
-
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
-<a href="/add_word">Add Word to Dictionary</a>
+<div class="row">
+  <div class="container-fluid">
+    <div class="word-list col-sm-6 col-sm-offset-3">
+      <h3>List of Words:</h3>
+
+      <ul>
+        <% @words.each() do |word|  %>
+        <li class="terms"><a href="/word/<%= word.id() %>"><%= word.term() %></a></li>
+        <% end %>
+      </ul>
+
+      <p><a href="/add_word">Add Word to Dictionary</a></p>
+    </div>
+  </div>
+</div>
