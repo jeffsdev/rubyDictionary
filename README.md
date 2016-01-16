@@ -14,7 +14,7 @@ HTML, CSS, Ruby, rspec, capybara, sinatra, heroku.
 public/main.css is not detected by some pages.
 
 ## Link to Project
-[View Dictionary app]()
+[View Dictionary app](https://arcane-ridge-5251.herokuapp.com/)
 
 ## License
 Copyright (c) 2015 Jeff Seymour
